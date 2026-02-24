@@ -10,6 +10,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import assetRoutes from "./routes/assetRoute.js";
 import chatRoutes from "./routes/chatRoutes.js";
+import paymentRoutes from "./routes/paymentRoute.js";
 import Conversation from "./models/conversation.js";
 import Message from "./models/message.js";
 import User from "./models/User.js";
@@ -33,6 +34,7 @@ app.use(cors({
 app.use("/api/auth", authRoutes);
 app.use("/api/assets", assetRoutes);
 app.use("/api/chats", chatRoutes);
+app.use("/api/payments", paymentRoutes);
 
 const port = process.env.PORT || 5000;
 const server = http.createServer(app);
